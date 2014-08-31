@@ -37,7 +37,7 @@ namespace EulerGenericRunner
                 {
                     case ParserReturnStatus.ArgInvalid:
                         {
-                            rval = "argument not a natural number";
+                            rval = "invalid argument: " + parser.GetUsageString();
                             break;
                         }
                     case ParserReturnStatus.TooFewArgs:
@@ -52,7 +52,7 @@ namespace EulerGenericRunner
                         }
                 }
 
-                rval += "\r\nusage: euler1 <upper bound>";
+                rval += "\r\nusage: eulerx.exe " + parser.GetInputFormatString();
             }
             else
             {

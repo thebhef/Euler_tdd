@@ -35,13 +35,15 @@ namespace EulerGenericRunner_Tests
         {
             var parser = new Mock<IEulerParser>();
             parser.Setup(m => m.ParseStringArray(new string[] { "1234" })).Returns(ParserReturnStatus.ArgInvalid);
+            parser.Setup(m => m.GetInputFormatString()).Returns("input format");
+            parser.Setup(m => m.GetUsageString()).Returns("usage");
 
             var solver = new Mock<IEulerSolver>();
             solver.Setup(m => m.GetSolution(1234)).Returns(4);
 
             EulerRunner er = new EulerRunner(parser.Object, solver.Object);
 
-            Assert.AreEqual("argument not a natural number\r\nusage: euler1 <upper bound>",
+            Assert.AreEqual("invalid argument: usage\r\nusage: eulerx.exe input format",
                             er.SolveEulerProblem(new string[] { "1234" }));
         }
 
@@ -50,13 +52,15 @@ namespace EulerGenericRunner_Tests
         {
             var parser = new Mock<IEulerParser>();
             parser.Setup(m => m.ParseStringArray(new string[] { "1234" })).Returns(ParserReturnStatus.TooFewArgs);
+            parser.Setup(m => m.GetInputFormatString()).Returns("input format");
+            parser.Setup(m => m.GetUsageString()).Returns("usage");
 
             var solver = new Mock<IEulerSolver>();
             solver.Setup(m => m.GetSolution(1234)).Returns(4);
 
             EulerRunner er = new EulerRunner(parser.Object, solver.Object);
 
-            Assert.AreEqual("too few arguments\r\nusage: euler1 <upper bound>",
+            Assert.AreEqual("too few arguments\r\nusage: eulerx.exe input format",
                             er.SolveEulerProblem(new string[] { "1234" }));
         }
 
@@ -66,13 +70,15 @@ namespace EulerGenericRunner_Tests
         {
             var parser = new Mock<IEulerParser>();
             parser.Setup(m => m.ParseStringArray(new string[] { "1234" })).Returns(ParserReturnStatus.TooManyArgs);
+            parser.Setup(m => m.GetInputFormatString()).Returns("input format");
+            parser.Setup(m => m.GetUsageString()).Returns("usage");
 
             var solver = new Mock<IEulerSolver>();
             solver.Setup(m => m.GetSolution(1234)).Returns(4);
 
             EulerRunner er = new EulerRunner(parser.Object, solver.Object);
 
-            Assert.AreEqual("too many arguments\r\nusage: euler1 <upper bound>",
+            Assert.AreEqual("too many arguments\r\nusage: eulerx.exe input format",
                             er.SolveEulerProblem(new string[] { "1234" }));
         }
 

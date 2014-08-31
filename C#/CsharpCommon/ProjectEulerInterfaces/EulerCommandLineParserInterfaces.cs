@@ -9,5 +9,7 @@ namespace ProjectEulerInterfaces
     public interface IEulerParser
     {
         object ParseStringArray(string[] argv);
+        string GetUsageString();
+        string GetInputFormatString();
     }
 }

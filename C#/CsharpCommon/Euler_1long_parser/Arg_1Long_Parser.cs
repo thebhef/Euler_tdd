@@ -37,6 +37,16 @@ namespace Euler_1long_parser
             return rval;
         }
 
+        public string GetUsageString()
+        {
+            return "expected a natural number";
+        }
+
+        public string GetInputFormatString()
+        {
+            return "<long>";
+        }
+
         #endregion
     }
 }
