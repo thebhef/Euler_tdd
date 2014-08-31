@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjectEulerInterfaces
 {
-    public interface IEulerParser
+    public interface IEulerRunner
     {
-        object ParseStringArray(string[] argv);
+        string SolveEulerProblem(string [] args);
     }
 }

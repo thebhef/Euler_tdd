@@ -20,7 +20,7 @@ namespace Arg_1Long_Parser_Tests
         {
             string[] args = new string[] { "1234" };
 
-            IEuler1VarParser parser = new Arg_1Long_Parser();
+            IEulerParser parser = new Arg_1Long_Parser();
 
             object returned = parser.ParseStringArray(args);
 
@@ -33,7 +33,7 @@ namespace Arg_1Long_Parser_Tests
         {
             string[] args = new string[0];
 
-            IEuler1VarParser parser = new Arg_1Long_Parser();
+            IEulerParser parser = new Arg_1Long_Parser();
 
             object returned = parser.ParseStringArray(args);
 
@@ -47,7 +47,7 @@ namespace Arg_1Long_Parser_Tests
         {
             string[] args = new string[2];
 
-            IEuler1VarParser parser = new Arg_1Long_Parser();
+            IEulerParser parser = new Arg_1Long_Parser();
 
             object returned = parser.ParseStringArray(args);
 
@@ -61,7 +61,7 @@ namespace Arg_1Long_Parser_Tests
         {
             string[] args = new string[] { "bad value" };
 
-            IEuler1VarParser parser = new Arg_1Long_Parser();
+            IEulerParser parser = new Arg_1Long_Parser();
 
             object returned = parser.ParseStringArray(args);
 

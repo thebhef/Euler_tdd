@@ -8,7 +8,7 @@ using ProjectEulerInterfaces;
 
 namespace Euler_1long_parser
 {
-    public class Arg_1Long_Parser : IEuler1VarParser
+    public class Arg_1Long_Parser : IEulerParser
     {
         #region IEuler1VarParser Members
 

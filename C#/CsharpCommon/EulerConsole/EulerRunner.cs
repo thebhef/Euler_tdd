@@ -8,20 +8,23 @@ using ProjectEulerInterfaces;
 using Euler_1long_parser;
 using Euler1;
 
-namespace EulerConsole
+namespace EulerGenericRunner
 {
-    class Program
+    public class EulerRunner : IEulerRunner
     {
-        //TODO: update with ninject and add test cases with mocked objects.
-
-        static IEuler1VarParser parser;
+        static IEulerParser parser;
         static IEulerSolver solver;
 
-        static void Main(string[] args)
+        public EulerRunner(IEulerParser CmdParser, IEulerSolver ProblemSolver)
         {
-            parser = new Arg_1Long_Parser();
-            solver = new Euler1Solver();
+            parser = CmdParser;
+            solver = ProblemSolver;
+        }
 
+        #region IEulerRunner Members
+
+        public string SolveEulerProblem(string[] args)
+        {
             string rval = "";
             object parsedArg = parser.ParseStringArray(args);
 
@@ -53,8 +56,8 @@ namespace EulerConsole
                 rval = solver.GetSolution(parsedArg).ToString();
             }
 
-            Console.WriteLine(rval);
-            Console.ReadLine();
+            return rval;
         }
+        #endregion
     }
 }
