@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4ED94AEE-8849-4C79-9470-94E70932A9B0}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{B2E47A74-7465-4D88-8F36-2B09237100F8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EulerGenericRunner</RootNamespace>
-    <AssemblyName>EulerGenericRunner</AssemblyName>
+    <RootNamespace>Euler1Console</RootNamespace>
+    <AssemblyName>Euler1Solve</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,18 +31,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Euler1">
-      <HintPath>..\Euler1_Lib\bin\Debug\Euler1.dll</HintPath>
+      <HintPath>..\..\1\Euler1_Lib\bin\Debug\Euler1.dll</HintPath>
+    </Reference>
+    <Reference Include="EulerGenericRunner">
+      <HintPath>..\..\CsharpCommon\EulerConsole\bin\Debug\EulerGenericRunner.dll</HintPath>
     </Reference>
     <Reference Include="Euler_1long_parser">
-      <HintPath>..\..\..\CsharpCommon\Euler_1long_parser\bin\Debug\Euler_1long_parser.dll</HintPath>
+      <HintPath>..\..\CsharpCommon\Euler_1long_parser\bin\Debug\Euler_1long_parser.dll</HintPath>
     </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectEulerInterfaces">
+      <HintPath>..\..\CsharpCommon\ProjectEulerInterfaces\bin\Debug\ProjectEulerInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,18 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EulerRunner.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProjectEulerInterfaces\ProjectEulerInterfaces.csproj">
-      <Project>{de0da9a3-af50-4044-a144-b4ab050be403}</Project>
-      <Name>ProjectEulerInterfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Ninject;
+
 using ProjectEulerInterfaces;
 using Euler_1long_parser;
 using Euler1;
@@ -15,6 +17,7 @@ namespace EulerGenericRunner
         static IEulerParser parser;
         static IEulerSolver solver;
 
+        [Inject]
         public EulerRunner(IEulerParser CmdParser, IEulerSolver ProblemSolver)
         {
             parser = CmdParser;
