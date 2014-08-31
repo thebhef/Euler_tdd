@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DE0DA9A3-AF50-4044-A144-B4AB050BE403}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{A4AA91CF-8729-4F4C-AA95-984A8D729363}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjectEulerInterfaces</RootNamespace>
-    <AssemblyName>ProjectEulerInterfaces</AssemblyName>
+    <RootNamespace>Euler2CommandLine</RootNamespace>
+    <AssemblyName>Euler2CommandLine</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,6 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EulerGenericRunner">
+      <HintPath>..\..\CsharpCommon\EulerConsole\bin\Debug\EulerGenericRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="Euler_1long_parser">
+      <HintPath>..\..\CsharpCommon\Euler_1long_parser\bin\Debug\Euler_1long_parser.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectEulerInterfaces">
+      <HintPath>..\..\CsharpCommon\ProjectEulerInterfaces\bin\Debug\ProjectEulerInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,12 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EulerCommandLineParserInterfaces.cs" />
-    <Compile Include="EulerRunnerInterfaces.cs" />
-    <Compile Include="EulerSolverInterfaces.cs" />
-    <Compile Include="ParserReturnEnum.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SequenceGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\2\Euler2.csproj">
+      <Project>{3573e228-8efd-4909-8bf7-056c55edb7ac}</Project>
+      <Name>Euler2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
